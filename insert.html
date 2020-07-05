@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Weather_Info </title>
+		<style>
+		.button {
+		  background-color: #0066ff;
+		  border: none;
+		  color: white;
+		  padding: 12px 28px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		}
+
+		.container{
+			background-color: #0066ff;
+			height: 150px;
+  			width: 1200px;
+		}
+
+
+		table {
+			  font-family: arial, sans-serif;
+			  border-collapse: collapse;
+			  width: 100%;
+			}
+
+			td, th {
+			  border: 1px solid #dddddd;
+			  text-align: left;
+			  padding: 8px;
+			}
+
+			tr:nth-child(even) {
+			  background-color: #dddddd;
+			}
+</style>
+	</head>
+	<body>
+		<div class=main>
+			<center>
+			<div class=container>
+			<center><br>
+ 			<h1 style="color:white;">Adi's Weather Info App</h1>
+ 			</center>
+			</div>	
+			<form action = "{{url_for('home_page')}}" method="post" class="input">
+
+				
+			<!--	<input type="text" class="form-control" name="city" placeholder="Search">  -->
+				
+				<input list="cities" name="city" id="city">
+
+				<datalist id="cities">
+						<option value="Mumbai">
+						<option value="Delhi">
+						<option value="Bangalore ">
+						<option value="Hyderabad">
+						<option value="Ahmedabad">
+						<option value="Chennai">
+						<option value="	Kolkata">
+						<option value="Surat">
+						<option value="Pune">
+						<option value="Jaipur">
+						<option value="Visakhapatnam[a][5]">
+						<option value="Nagpur">
+						<option value="Lucknow">
+						<option value="Kanpur">
+						<option value="Thane">
+						<option value="Bhopal">
+						<option value="Indore">
+						<option value="Pimpri-Chinchwad">
+						<option value="Patna">
+						<option value="Vadodara">
+						<option value="Ghaziabad">
+						<option value="Ludhiana">
+						<option value="Agra">
+						<option value="Nashik">
+						<option value="Faridabad">
+						<option value="Meerut">
+						<option value="Rajkot">
+						<option value="Kalyan-Dombivli">
+						<option value="Vasai-Virar">
+						<option value="Varanasi">
+						<option value="Srinagar">
+						<option value="Aurangabad">
+						<option value="Dhanbad">
+						<option value="Amritsar">
+						<option value="Navi Mumbai">
+						<option value="Allahabad">
+						<option value="Howrah">
+						<option value="Ranchi">
+						<option value="Gwalior">
+						<option value="Jabalpur">
+						<option value="Coimbatore">
+						<option value="Vijayawada">
+						<option value="Jodhpur">
+						<option value="Madurai">
+						<option value="Raipur">
+						<option value="Chandigarh">
+						<option value="Guwahati">
+						<option value="Solapur">
+						<option value="Hubli–Dharwad">
+						<option value="Mysore[7][8][9]">
+						<option value="Tiruchirappalli[10]">
+						<option value="Bareilly">
+						<option value="Aligarh">
+						<option value="Tiruppur">
+						<option value="Gurgaon">
+						<option value="Moradabad">
+						<option value="Jalandhar">
+						<option value="Bhubaneswar">
+						<option value="Salem">
+						<option value="Warangal[11][12]">
+						<option value="Mira-Bhayandar">
+						<option value="Jalgaon">
+						<option value="Kota[13]">
+						<option value="Guntur[14]">
+						<option value="Bhiwandi">
+						<option value="Saharanpur">
+						<option value="Gorakhpur">
+						<option value="Bikaner">
+						<option value="Amravati">
+						<option value="Noida">
+						<option value="Jamshedpur">
+						<option value="Bhilai">
+						<option value="Cuttack">
+						<option value="Firozabad">
+						<option value="Kochi">
+						<option value="Nellore[15][16]">
+						<option value="Bhavnagar">
+						<option value="Dehradun">
+						<option value="Durgapur">
+						<option value="Asansol">
+						<option value="Rourkela">
+						<option value="Nanded">
+						<option value="Kolhapur">
+						<option value="Ajmer">
+						<option value="Akola">
+						<option value="Gulbarga">
+						<option value="Jamnagar">
+						<option value="Ujjain">
+						<option value="Loni">
+						<option value="Siliguri">
+						<option value="Jhansi">
+						<option value="Ulhasnagar">
+						<option value="Jammu[17]">
+						<option value="Sangli-Miraj & Kupwad">
+						<option value="Mangalore">
+						<option value="Erode[18]">
+						<option value="Belgaum">
+						<option value="Ambattur">
+						<option value="Tirunelveli">
+						<option value="Malegaon">
+						<option value="Gaya">
+						<option value="Thiruvananthapuram">
+						<option value="Udaipur">
+						<option value="Kakinada">
+						<option value="Davanagere">
+						<option value="Kozhikode">
+						<option value="Maheshtala">
+						<option value="Rajpur Sonarpur">
+						<option value="Rajahmundry[19][20]">
+						<option value="Bokaro">
+						<option value="South Dumdum">
+						<option value="Bellary">
+						<option value="Patiala">
+						<option value="Gopalpur">
+						<option value="Agartala">
+						<option value="Bhagalpur">
+						<option value="Muzaffarnagar">
+						<option value="Bhatpara">
+						<option value="Panihati">
+						<option value="Latur">
+						<option value="Dhule">
+						<option value="Tirupati[21]">
+						<option value="Rohtak">
+						<option value="Sagar">
+						<option value="Korba">
+						<option value="Bhilwara">
+						<option value="Berhampur">
+						<option value="Muzaffarpur">
+						<option value="Ahmednagar">
+						<option value="Mathura">
+						<option value="Kollam">
+						<option value="Avadi">
+						<option value="Kadapa">
+						<option value="Kamarhati">
+						<option value="Sambalpur">
+						<option value="Bilaspur">
+						<option value="Shahjahanpur">
+						<option value="Satara">
+						<option value="Bijapur">
+						<option value="Kurnool">
+						<option value="Rampur">
+						<option value="Shimoga">
+						<option value="Chandrapur">
+						<option value="Junagadh">
+						<option value="Thrissur">
+						<option value="Alwar">
+						<option value="Bardhaman">
+						<option value="Kulti">
+						<option value="Nizamabad">
+						<option value="Parbhani">
+						<option value="Tumkur">
+						<option value="Khammam">
+						<option value="Ozhukarai">
+						<option value="Bihar Sharif">
+						<option value="Panipat">
+						<option value="Darbhanga">
+						<option value="Bally">
+						<option value="Aizawl">
+						<option value="Dewas">
+						<option value="Ichalkaranji">
+						<option value="Karnal">
+						<option value="Bathinda">
+						<option value="Jalna">
+						<option value="Eluru[22]">
+						<option value="Barasat">
+						<option value="Kirari Suleman Nagar">
+						<option value="Purnia[23]">
+						<option value="Satna">
+						<option value="Mau">
+						<option value="Sonipat">
+						<option value="Farrukhabad">
+						<option value="Durg">
+						<option value="Imphal">
+						<option value="Ratlam">
+						<option value="Hapur">
+						<option value="Arrah">
+						<option value="Anantapur">
+						<option value="Karimnagar">
+						<option value="Etawah">
+						<option value="Ambarnath">
+						<option value="North Dumdum">
+						<option value="Bharatpur">
+						<option value="Begusarai">
+						<option value="New Delhi">
+						<option value="Gandhidham">
+						<option value="Baranagar">
+						<option value="Tiruvottiyur">
+						<option value="Pondicherry">
+						<option value="Sikar">
+						<option value="Thoothukudi">
+						<option value="Rewa">
+						<option value="Mirzapur">
+						<option value="Raichur">
+						<option value="Pali">
+						<option value="Ramagundam[24]">
+						<option value="Silchar">
+						<option value="Haridwar">
+						<option value="Vijayanagaram">
+						<option value="Tenali">
+						<option value="Nagercoil">
+						<option value="Sri Ganganagar">
+						<option value="Karawal Nagar">
+						<option value="Mango">
+						<option value="Thanjavur">
+						<option value="Bulandshahr">
+						<option value="Uluberia">
+						<option value="Katni">
+						<option value="Sambhal">
+						<option value="Singrauli">
+						<option value="Nadiad">
+						<option value="Secunderabad">
+						<option value="Naihati">
+						<option value="Yamunanagar">
+						<option value="Bidhannagar">
+						<option value="Pallavaram">
+						<option value="Bidar">
+						<option value="Munger">
+						<option value="Panchkula">
+						<option value="Burhanpur">
+						<option value="Raurkela Industrial Township">
+						<option value="Kharagpur">
+						<option value="Dindigul">
+						<option value="Gandhinagar">
+						<option value="Hospet">
+						<option value="Nangloi Jat">
+						<option value="Malda">
+						<option value="Ongole">
+						<option value="Deoghar">
+						<option value="Chapra">
+						<option value="Haldia">
+						<option value="Khandwa">
+						<option value="Nandyal">
+						<option value="Morena">
+						<option value="Amroha">
+						<option value="Anand">
+						<option value="Bhind">
+						<option value="Bhalswa Jahangir Pur">
+						<option value="Madhyamgram">
+						<option value="Bhiwani">
+						<option value="Berhampore">
+						<option value="Ambala">
+						<option value="Morbi">
+						<option value="Fatehpur">
+						<option value="Raebareli">
+						<option value="Mahaboobnagar">
+						<option value="Chittoor[25]">
+						<option value="Bhusawal">
+						<option value="Orai">
+						<option value="Bahraich">
+						<option value="Vellore">
+						<option value="Mehsana">
+						<option value="Raiganj">
+						<option value="Sirsa">
+						<option value="Danapur">
+						<option value="Serampore">
+						<option value="Sultan Pur Majra">
+						<option value="Guna">
+						<option value="Jaunpur">
+						<option value="Panvel">
+						<option value="Shivpuri">
+						<option value="Surendranagar Dudhrej">
+						<option value="Unnao">
+						<option value="Chinsurah">
+						<option value="Alappuzha">
+						<option value="Kottayam">
+						<option value="Machilipatnam">
+						<option value="Shimla">
+						<option value="Adoni">
+						<option value="Udupi">
+						<option value="Katihar">
+						<option value="Proddatur">
+						<option value="Saharsa[26]">
+						<option value="Dibrugarh">
+						<option value="Jorhat">
+						<option value="Hindupur">
+						<option value="Nagaon">
+						<option value="Sasaram[27]">
+						<option value="Hajipur[28]">
+						<option value="Bhimavaram">
+						<option value="Kumbakonam">
+						<option value="Bongaigaon">
+						<option value="Dehri[27]">
+						<option value="Madanapalle">
+						<option value="Siwan[29]">
+						<option value="Bettiah[30]">
+						<option value="Tinsukia">
+						<option value="Guntakal">
+						<option value="Srikakulam">
+						<option value="Motihari[31]">
+						<option value="Dharmavaram">
+						<option value="Gudivada">
+						<option value="Phagwara">
+						<option value="Narasaraopet">
+						<option value="Suryapet">
+						<option value="Miryalaguda">
+						<option value="Tadipatri">
+						<option value="Karaikudi">
+						<option value="Kishanganj[32]">
+						<option value="Jamalpur[33]">
+						<option value="Ballia">
+						<option value="Kavali">
+						<option value="Tadepalligudem">
+						<option value="Amaravati">
+						<option value="Buxar[34]">
+						<option value="Tezpur">
+						<option value="Jehanabad[35]">
+						<option value="Aurangabad[36]">
+						<option value="Gangtok">
+				 
+				</datalist>
+				
+				
+				
+				
+				
+				
+				<button class="button">Submit</button>
+			<h3>The weather information is for the city: {{data.name}}</h3>
+
+			<table>
+		  <tr>
+		    <th>Features</th>
+		    <th>Data</th>
+		  </tr>
+		  <tr>
+		    <td>Name</td>
+		    <td>{{data.name}}</td>
+		  </tr>
+		  <tr>
+		    <td>Temperature</td>
+		    <td>{{data.temp}}</td>
+		  </tr>
+		  <tr>
+		    <td>Minimum Temp</td>
+		    <td>{{data.temp_min}}</td>
+		  </tr>
+		  <tr>
+		    <td>Maximum Temp</td>
+		    <td>{{data.temp_max}}</td>
+		  </tr>
+		  <tr>
+		    <td>Humidity</td>
+		    <td>{{data.humidity}}</td>
+		  </tr>
+		  <tr>
+		    <td>Pressure</td>
+		    <td>{{data.pressure}}</td>
+		  </tr>
+
+		  <tr>
+		    <td>Sunrise</td>
+		    <td>{{data.sunrise}}</td>
+		  </tr>
+		  <tr>
+		    <td>Sunset</td>
+		    <td>{{data.sunset}}</td>
+		  </tr>
+		  <tr>
+		    <td>Wind Speed</td>
+		    <td>{{data.speed}}</td>
+		  </tr>
+		</table>
+			</form>
+			</center>
+		</div>
+
+	</body>
+</html> 
+
+
+
+
+
+
